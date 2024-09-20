@@ -1,43 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ereina-l <ereina-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/18 11:23:56 by ereina-l          #+#    #+#             */
-/*   Updated: 2024/09/20 15:30:02 by ereina-l         ###   ########.fr       */
+/*   Created: 2024/09/20 15:18:54 by ereina-l          #+#    #+#             */
+/*   Updated: 2024/09/20 15:31:43 by ereina-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t		i;
-	char		*d;
-	const char	*s;
+	size_t				i;
+	unsigned char		*str1;
+	unsigned char		*str2;
 
-	if (!dst && !src)
-		return (0);
 	i = 0;
-	d = (char *)dst;
-	s = (const char *)src;
-	while (i < n)
-	{
-		d[i] = (const char)s[i];
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
+	while (str1[i] && str2[i] && str1[i] == str2[i])
 		i++;
-	}
-	return (dst);
+	if (i < n)
+		return (str1[i] - str2[i]);
+	else
+		return (0);
 }
-
 /* #include <stdio.h>
-int	main(void)
+int	main(int argc, char **argv)
 {
-	char	dst[4];
-	char	src[] = "Javier";
+	int	rvalue;
 
-	ft_memcpy(dst, src, 4);
-	printf("%s\n", dst);
+	if (argc != 3)
+		return (0);
+	rvalue = ft_memcmp(argv[1], argv[2], 3);
+	printf("%d\n", rvalue);
 	return (0);
 } */

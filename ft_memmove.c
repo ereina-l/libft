@@ -6,7 +6,7 @@
 /*   By: ereina-l <ereina-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 12:27:54 by ereina-l          #+#    #+#             */
-/*   Updated: 2024/09/20 12:38:42 by ereina-l         ###   ########.fr       */
+/*   Updated: 2024/09/20 12:56:22 by ereina-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,21 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	{
 		d = (char *)dst;
 		s = (const char *)src;
-		while (n != 0)
+		while (n > 0)
 		{
-			d[n] = s[n];
+			d[n - 1] = s[n - 1];
 			n--;
 		}
 	}
 	return (dst);
 }
-
-#include <stdio.h>
+/*#include <stdio.h>
 int	main(void)
 {
 	char	dst[4];
-	char	src[] = "Javier";
+	char	src[] = "Miaumiaumiau";
 
 	ft_memmove(dst, src, 4);
 	printf("%s\n", dst);
 	return (0);
-}
+}*/
