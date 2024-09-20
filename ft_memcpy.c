@@ -6,7 +6,7 @@
 /*   By: ereina-l <ereina-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 11:23:56 by ereina-l          #+#    #+#             */
-/*   Updated: 2024/09/20 12:03:59 by ereina-l         ###   ########.fr       */
+/*   Updated: 2024/09/20 12:36:46 by ereina-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 		i++;
 	}
 	return (dst);
-
 }
 
 /* #include <stdio.h>
