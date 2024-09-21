@@ -6,7 +6,7 @@
 /*   By: ereina-l <ereina-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 16:17:44 by ereina-l          #+#    #+#             */
-/*   Updated: 2024/09/20 16:12:08 by ereina-l         ###   ########.fr       */
+/*   Updated: 2024/09/21 17:51:25 by ereina-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int		ft_isalnum(int c);
 int		ft_isprint(int c);
 int		tolower(int c);
 int		toupper(int c);
+int     ft_atoi(const char *nptr);
 int		ft_strlen(char *str);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
