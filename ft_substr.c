@@ -6,7 +6,7 @@
 /*   By: ereina-l <ereina-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 12:32:47 by ereina-l          #+#    #+#             */
-/*   Updated: 2024/09/27 13:13:33 by ereina-l         ###   ########.fr       */
+/*   Updated: 2024/09/27 16:44:55 by ereina-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	sub[i] = '\0';
 	return (sub);
 }
-#include <stdio.h>
+/* #include <stdio.h>
 int	main(int argc, char **argv)
 {
 	char	*sub;
@@ -44,4 +44,4 @@ int	main(int argc, char **argv)
 	printf("La subcadena es: %s\n", sub);
 	free(sub);
 	return (0);
-}
+} */
