@@ -6,11 +6,11 @@
 /*   By: ereina-l <ereina-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 19:25:56 by ereina-l          #+#    #+#             */
-/*   Updated: 2024/09/20 13:17:53 by ereina-l         ###   ########.fr       */
+/*   Updated: 2024/09/27 11:35:20 by ereina-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+int	ft_strlen(const char *str)
 {
 	int	i;
 
