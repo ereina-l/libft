@@ -6,7 +6,7 @@
 /*   By: ereina-l <ereina-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 15:36:38 by ereina-l          #+#    #+#             */
-/*   Updated: 2024/09/20 16:04:04 by ereina-l         ###   ########.fr       */
+/*   Updated: 2024/09/27 12:10:42 by ereina-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (0);
 }
-#include <stdio.h>
+/* #include <stdio.h>
 
 int	main(int argc, char **argv)
 {
@@ -47,4 +47,4 @@ int	main(int argc, char **argv)
 		return (0);
 	printf("%s\n", rvalue);
 	return (0);
-}
+} */
