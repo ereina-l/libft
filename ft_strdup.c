@@ -6,7 +6,7 @@
 /*   By: ereina-l <ereina-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 13:11:50 by ereina-l          #+#    #+#             */
-/*   Updated: 2024/09/27 12:08:15 by ereina-l         ###   ########.fr       */
+/*   Updated: 2024/09/27 12:21:53 by ereina-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,5 @@ int	main(int argc, char **argv)
 	printf("La copia de la cadena es: %s\n", dup);
 	free(dup);
 	return (0);
-} */
+} 
+*/
