@@ -6,7 +6,7 @@
 /*   By: ereina-l <ereina-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 17:16:40 by ereina-l          #+#    #+#             */
-/*   Updated: 2024/09/27 18:36:50 by ereina-l         ###   ########.fr       */
+/*   Updated: 2024/09/28 15:41:26 by ereina-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int	ft_stringcount(char const *s, char c)
 	str = ft_strtrim(s, &c);
 	count = 0;
 	i = 0;
+	if (!str)
+		return (0);
 	while (str[i])
 	{
 		while (str[i] && str[i] != c)
@@ -67,7 +69,7 @@ void	ft_clean(char **ptr)
 char	**ft_split(char const *s, char c)
 {
 	char	**split;
-	size_t	count;
+	int		count;
 	int		i;
 	int		j;
 	size_t	len;
@@ -78,7 +80,7 @@ char	**ft_split(char const *s, char c)
 	split = (char **)malloc(count * sizeof(char *));
 	if (!split)
 		return (NULL);
-	while (s[i])
+	while (s[i] && j < count)
 	{
 		while (s[i] == c)
 			i++;
@@ -89,7 +91,25 @@ char	**ft_split(char const *s, char c)
 		i = i + len;
 		j++;
 	}
-	split[j] = '\0';
+	split[j] = 0;
 	return (split);
+}
+#include <stdio.h>
+int	main(void)
+{
+	char const	*str = "           Te lo digo en una palabra o en            dos una mierda dos puta mierda           ";
+	char	c;
+	char	**chicotin;
+	int		i;
+	c = 32;
+	i = 0;
+	chicotin = ft_split(str, c);
+	while (chicotin[i])
+	{
+		printf("Chicotin es: %s\n", chicotin[i]);
+		i++;
+	}
+	ft_clean(chicotin);
+	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: ereina-l <ereina-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 12:32:47 by ereina-l          #+#    #+#             */
-/*   Updated: 2024/09/27 16:44:55 by ereina-l         ###   ########.fr       */
+/*   Updated: 2024/09/28 15:32:03 by ereina-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		len = ft_strlen(s) - start;
 	i = 0;
 	sub = ft_calloc(len + 1, sizeof(char));
+	if (!sub)
+		return (NULL);
 	while (i < len)
 	{
 		sub[i] = s[start];
