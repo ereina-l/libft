@@ -6,7 +6,7 @@
 /*   By: ereina-l <ereina-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 14:31:39 by ereina-l          #+#    #+#             */
-/*   Updated: 2024/10/04 12:19:29 by ereina-l         ###   ########.fr       */
+/*   Updated: 2024/10/04 13:25:44 by ereina-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,11 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		j++;
 	while (src[i] && i < size - j - 1)
 	{
-		dst[j] = src[i];
+		dst[j + i] = src[i];
 		i++;
-		j++;
 	}
-	dst[j] = '\0';
-	return (j + i);
+	dst[j + i] = '\0';
+	return (j + ft_strlen(src));
 }
 /* #include <stdio.h>
 #include <string.h>

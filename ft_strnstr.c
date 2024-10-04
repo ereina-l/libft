@@ -6,7 +6,7 @@
 /*   By: ereina-l <ereina-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 15:36:38 by ereina-l          #+#    #+#             */
-/*   Updated: 2024/09/27 12:10:42 by ereina-l         ###   ########.fr       */
+/*   Updated: 2024/10/04 14:55:37 by ereina-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	i = 0;
 	j = 0;
 	str = (char *)big;
-	if (!(little))
+	if (!(*little))
 		return (str);
 	while (str[i])
 	{

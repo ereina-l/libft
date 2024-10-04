@@ -6,11 +6,12 @@
 /*   By: ereina-l <ereina-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 17:16:40 by ereina-l          #+#    #+#             */
-/*   Updated: 2024/10/04 12:23:06 by ereina-l         ###   ########.fr       */
+/*   Updated: 2024/10/04 15:33:37 by ereina-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static int	ft_stringcount(char const *s, char c)
 {
@@ -21,7 +22,7 @@ static int	ft_stringcount(char const *s, char c)
 	str = ft_strtrim(s, &c);
 	count = 0;
 	i = 0;
-	if (!str)
+	if (!*str)
 		return (0);
 	while (str[i])
 	{
@@ -77,7 +78,7 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	j = 0;
 	count = ft_stringcount(s, c);
-	split = (char **)malloc(count * sizeof(char *));
+	split = (char **)malloc((count + 1) * sizeof(char *));
 	if (!split)
 		return (NULL);
 	while (s[i] && j < count)
@@ -94,10 +95,9 @@ char	**ft_split(char const *s, char c)
 	split[j] = 0;
 	return (split);
 }
-/* #include <stdio.h>
-int	main(void)
+/* int	main(void)
 {
-	char const	*str = "   I like    potatoes    and trains      ";
+	char const	*str = "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse";
 	char	c;
 	char	**chicotin;
 	int		i;
