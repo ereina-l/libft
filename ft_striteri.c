@@ -6,7 +6,7 @@
 /*   By: ereina-l <ereina-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 10:04:34 by ereina-l          #+#    #+#             */
-/*   Updated: 2024/10/04 15:39:19 by ereina-l         ###   ########.fr       */
+/*   Updated: 2024/10/04 18:59:30 by ereina-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	unsigned int	i;
 
-/* 	if (!s || !f)
-		return (NULL); */
 	i = 0;
 	while (s[i])
 	{

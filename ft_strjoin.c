@@ -6,7 +6,7 @@
 /*   By: ereina-l <ereina-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 15:33:36 by ereina-l          #+#    #+#             */
-/*   Updated: 2024/09/27 16:11:15 by ereina-l         ###   ########.fr       */
+/*   Updated: 2024/10/04 17:29:09 by ereina-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		j;
 
 	join = ft_calloc(ft_strlen(s1) + ft_strlen(s2) + 1, sizeof(char));
+	if (!join)
+		return (NULL);
 	i = 0;
 	j = 0;
 	while (s1[i])

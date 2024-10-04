@@ -6,7 +6,7 @@
 /*   By: ereina-l <ereina-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 15:59:27 by ereina-l          #+#    #+#             */
-/*   Updated: 2024/09/13 15:59:56 by ereina-l         ###   ########.fr       */
+/*   Updated: 2024/10/04 17:07:32 by ereina-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@ char	*ft_strrchr(const char *s, int c)
 	int	i;
 
 	i = 0;
-	while (s[i] != '\0')
+	while (s[i])
 	{
 		i++;
 	}
-	while (s[i] != c)
+	while (s[i] != (char) c)
 	{
 		if (i == 0)
 			return (0);

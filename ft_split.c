@@ -6,45 +6,40 @@
 /*   By: ereina-l <ereina-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 17:16:40 by ereina-l          #+#    #+#             */
-/*   Updated: 2024/10/04 15:33:37 by ereina-l         ###   ########.fr       */
+/*   Updated: 2024/10/04 19:00:13 by ereina-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-static int	ft_stringcount(char const *s, char c)
+static int	ft_stringcount(const char *s, char c)
 {
-	char	*str;
-	int		count;
-	int		i;
+	int	count;
+	int	i;
 
-	str = ft_strtrim(s, &c);
 	count = 0;
 	i = 0;
-	if (!*str)
-		return (0);
-	while (str[i])
+	while (s[i])
 	{
-		while (str[i] && str[i] != c)
-			i++;
-		if (str[i] == c)
+		if (s[i] != c)
 		{
 			count++;
-			while (str[i] == c)
+			while (s[i] && s[i] != c)
 				i++;
 		}
+		else
+			i++;
 	}
-	free(str);
-	return (count + 1);
+	return (count);
 }
 
-static size_t	ft_sublen(char const *ptr, char c, int i)
+static int	ft_sublen(const char *s, char c, int i)
 {
-	size_t	len;
+	int	len;
 
 	len = 0;
-	while (ptr[i] && ptr[i] != c)
+	while (s[i] && s[i] != c)
 	{
 		i++;
 		len++;
@@ -52,52 +47,47 @@ static size_t	ft_sublen(char const *ptr, char c, int i)
 	return (len);
 }
 
-static void	ft_clean(char **ptr)
+static void	ft_clean(char **str, int j)
 {
-	int	i;
-
-	i = 0;
-	while (ptr[i])
+	while (j > 0)
 	{
-		free(ptr[i]);
-		ptr[i] = NULL;
-		i++;
+		free(str[j - 1]);
+		j--;
 	}
-	free(ptr);
-	ptr = NULL;
+	free(str);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**split;
-	int		count;
 	int		i;
 	int		j;
-	size_t	len;
 
-	i = 0;
-	j = 0;
-	count = ft_stringcount(s, c);
-	split = (char **)malloc((count + 1) * sizeof(char *));
+	split = malloc((ft_stringcount(s, c) + 1) * sizeof(char *));
 	if (!split)
 		return (NULL);
-	while (s[i] && j < count)
+	j = 0;
+	i = 0;
+	while (j < ft_stringcount(s, c))
 	{
 		while (s[i] == c)
 			i++;
-		len = ft_sublen(s, c, i);
-		split[j] = ft_substr(s, i, len);
-		if (!split[j])
-			return (ft_clean(split), NULL);
-		i = i + len;
+		split[j] = ft_substr(s, i, ft_sublen(s, c, i));
+		if (!(split[j]))
+		{
+			ft_clean(split, j);
+			return (NULL);
+		}
+		i += ft_sublen(s, c, i);
 		j++;
 	}
 	split[j] = 0;
 	return (split);
 }
+
 /* int	main(void)
 {
-	char const	*str = "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse";
+	char const	*str = "lorem ipsum dolor sit";
 	char	c;
 	char	**chicotin;
 	int		i;
