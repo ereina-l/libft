@@ -6,7 +6,7 @@
 /*   By: ereina-l <ereina-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 12:21:39 by ereina-l          #+#    #+#             */
-/*   Updated: 2024/10/01 13:04:07 by ereina-l         ###   ########.fr       */
+/*   Updated: 2024/10/04 12:24:46 by ereina-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;
-	char	*str;
+	char			*str;
 
 	if (!s || !f)
 		return (NULL);
@@ -26,7 +26,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	while (s[i])
 	{
 		str[i] = (*f)(i, s[i]);
-		i++; 
+		i++;
 	}
 	str[i] = '\0';
 	return (str);

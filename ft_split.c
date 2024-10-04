@@ -6,13 +6,13 @@
 /*   By: ereina-l <ereina-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 17:16:40 by ereina-l          #+#    #+#             */
-/*   Updated: 2024/09/28 15:41:26 by ereina-l         ###   ########.fr       */
+/*   Updated: 2024/10/04 12:23:06 by ereina-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_stringcount(char const *s, char c)
+static int	ft_stringcount(char const *s, char c)
 {
 	char	*str;
 	int		count;
@@ -38,7 +38,7 @@ int	ft_stringcount(char const *s, char c)
 	return (count + 1);
 }
 
-size_t	ft_sublen(char const *ptr, char c, int i)
+static size_t	ft_sublen(char const *ptr, char c, int i)
 {
 	size_t	len;
 
@@ -51,7 +51,7 @@ size_t	ft_sublen(char const *ptr, char c, int i)
 	return (len);
 }
 
-void	ft_clean(char **ptr)
+static void	ft_clean(char **ptr)
 {
 	int	i;
 
@@ -94,10 +94,10 @@ char	**ft_split(char const *s, char c)
 	split[j] = 0;
 	return (split);
 }
-#include <stdio.h>
+/* #include <stdio.h>
 int	main(void)
 {
-	char const	*str = "           Te lo digo en una palabra o en            dos una mierda dos puta mierda           ";
+	char const	*str = "   I like    potatoes    and trains      ";
 	char	c;
 	char	**chicotin;
 	int		i;
@@ -111,5 +111,4 @@ int	main(void)
 	}
 	ft_clean(chicotin);
 	return (0);
-}
-
+} */

@@ -6,11 +6,11 @@
 #    By: ereina-l <ereina-l@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/21 17:56:53 by ereina-l          #+#    #+#              #
-#    Updated: 2024/10/02 11:37:35 by ereina-l         ###   ########.fr        #
+#    Updated: 2024/10/04 11:49:26 by ereina-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
 
