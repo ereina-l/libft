@@ -6,7 +6,7 @@
 #    By: ereina-l <ereina-l@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/21 17:56:53 by ereina-l          #+#    #+#              #
-#    Updated: 2024/10/04 11:49:26 by ereina-l         ###   ########.fr        #
+#    Updated: 2024/10/11 17:02:59 by ereina-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,18 +24,24 @@ SRC = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c \
 	ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c \
 	ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 
+SRC_BONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c 	
+
 OBJ = $(SRC:.c=.o)
+
+OBJ_BONUS = $(SRC_BONUS:.c=.o)
 
 all : $(NAME)
 
 $(NAME) : $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
-%.o : %.c 
+%.o : %.c
 	$(CC) $(FLAGS) -c $< -o $@
 
+bonus:	$(OBJ) $(OBJ_BONUS)
+		ar rcs $(NAME) $(OBJ) $(OBJ_BONUS)
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(OBJ_BONUS)
 
 fclean:
 	rm -f $(NAME) $(OBJ)
