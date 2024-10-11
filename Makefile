@@ -6,7 +6,7 @@
 #    By: ereina-l <ereina-l@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/21 17:56:53 by ereina-l          #+#    #+#              #
-#    Updated: 2024/10/11 17:36:52 by ereina-l         ###   ########.fr        #
+#    Updated: 2024/10/11 18:22:48 by ereina-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ SRC = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c \
 SRC_BONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c \
 			ft_lstsize_bonus.c 	ft_lstlast_bonus.c \
 			ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
+			ft_lstclear_bonus.c ft_lstiter_bonus.c \
 			
 
 OBJ = $(SRC:.c=.o)
