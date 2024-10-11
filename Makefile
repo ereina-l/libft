@@ -6,7 +6,7 @@
 #    By: ereina-l <ereina-l@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/21 17:56:53 by ereina-l          #+#    #+#              #
-#    Updated: 2024/10/11 18:45:17 by ereina-l         ###   ########.fr        #
+#    Updated: 2024/10/11 18:55:56 by ereina-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +48,8 @@ clean:
 	rm -f $(OBJ) $(OBJ_BONUS)
 
 fclean:
-	rm -f $(NAME) $(OBJ)
+	rm -f $(NAME) $(OBJ) $(OBJ_BONUS)
 
-re: fclean all		
+re: fclean all
+
+.PHONY: re all clean fclean bonus
